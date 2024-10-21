@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 3-1</title>
+    <style>
+        p {color: blueviolet;}
+    </style>
+</head>
+<body>
+    <h1>Cifrado César</h1>
+    <input type="text" name="cadena" id="cadena" placeholder="texto a transliterar">
+    <input type="number" name="cifrado" id="cifrado" placeholder="posiciones a avanzar">
+    <button onclick="transliterar()">TRANSLITERA</button>
+    <p id="final"></p>
+    <p id="original"></p>
+
+</body>
+<script>
+
+    function transliterar () {
+        const ABECEDARIO = "abcdefghijklmnñopqrstuvwxyz";
+        const LONGITUD_ABECEDARIO = ABECEDARIO.length;
+        let cadenaOriginal = document.getElementById("cadena").value;
+        cadenaOriginal = cadenaOriginal.toLowerCase();
+        let number = parseInt(document.getElementById("cifrado").value);
+        let cadenaFinal = "";
+
+        number = number % LONGITUD_ABECEDARIO;
+        for (let value of cadenaOriginal) {
+            if (!isNaN(value) || !ABECEDARIO.includes(value)) //si el caracter de la iteración es un número o no está en abecedario
+                cadenaFinal += value;
+            else
+                cadenaFinal += ABECEDARIO.charAt(
+                    (ABECEDARIO.indexOf(value) + number) % LONGITUD_ABECEDARIO);
+        }
+        document.getElementById("original").textContent = "CADENA ORIGINAL: " + cadenaOriginal;
+        document.getElementById("final").textContent = "CADENA FINAL: " + cadenaFinal;
+    }
+</script>
+</html>

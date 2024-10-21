@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--Aitor Pascual Jiménez-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+
+        }
+        body {
+            background: url(https://img.freepik.com/vector-premium/fondo-color-pastel-abstracto-diseno-poster-ilustraciones-minimalistas-estilo-liquido-banner-web_322958-432.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        div {
+            border: 2px solid;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            padding: 10%;
+            padding-bottom: 13%;
+            margin-left: 20%;
+            margin-right: 20%;
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        div label {
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: inline-block;
+            margin: 10px;
+        }
+        div input[type="text"] {
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(0, 100, 0, 0.2);
+            border-color: skyblue;
+        }
+        div input[type="text"]:hover, div input[type="text"]:focus {
+            border-color: blueviolet;
+        }
+        h3 {
+            text-align: center;
+            text-decoration: underline;
+            color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Formulario no enviable</h1>
+    <div>
+        <form>
+            <label for="nombre">Nombre</label><br>
+            <input type="text" name="nombre" id="nombre" value="Agustín"><br>
+            <label for="apellido">Apellido</label><br>
+            <input type="text" name="apellido" id="apellido" value="Piña Márquez">
+        </form>
+    </div>
+    <h3>Aitor Pascual Jiménez</h3>
+    <h3>Ningún derecho reservado</h3>
+</body>
+</html>

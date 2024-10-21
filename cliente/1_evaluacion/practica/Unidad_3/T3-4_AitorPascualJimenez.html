@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const range = (start, stop, step) =>
+        Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step); //función generadora
+
+    let arrayNum = range(1,49,1);
+
+    let index;
+    let index2;
+    let aux;
+    for (let vuelta = 1; vuelta < 11; vuelta++) {
+        for (let i = 0; i < 1000 ; i++) { //remover solo 50 veces hace que algunos elementos no se desordenen
+            index = parseInt(Math.random() * (50 - 1));
+            index2 = parseInt(Math.random() * (50 - 1));
+            //swap
+            aux = arrayNum[index];
+            arrayNum[index] = arrayNum[index2];
+            arrayNum[index2] = aux;
+        }
+        document.write("billete " + vuelta + " => ");
+        for (let i = 0; i < 6; i++) {
+            document.write(arrayNum[i]);
+            if (i < 5)
+                document.write(", ");
+            else
+                document.write("<br>");
+        }
+    }
+</script>
+</html>

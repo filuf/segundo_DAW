@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Aitor">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T3 Asteriscos</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let arrayNum = [];
+    for (let i = 0; i < 20; i++) {
+        arrayNum[i] = parseInt(Math.random() * (50 - 1) + 1);
+    }
+    arrayNum.forEach((elemento, indice) => {
+        document.write("<p>[+] Indice: " + indice + " elementos "  + elemento + " -> " + "*".repeat(elemento) + "</P>");
+    });
+</script>
+</html>

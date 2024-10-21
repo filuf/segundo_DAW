@@ -1,0 +1,11 @@
+typeof 12
+typeof 12.3
+typeof 12*3
+typeof (1/10)
+typeof "Hola"
+typeof 'Hola'
+typeof null
+typeof {nombre:"Jorge"}
+typeof [1,2,3,4,5]
+typeof true
+typeof (12>3)

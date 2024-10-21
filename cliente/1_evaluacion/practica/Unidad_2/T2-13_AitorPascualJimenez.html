@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" name="rows" id="rows" placeholder="filas">
+        <input type="number" name="cols" id="cols" placeholder="columnas">
+        <button type="button" onclick="generarTabla()">generar</button>
+    </div>
+    <div id="container">
+        <!--Contenido generado-->
+    </div>
+</body>
+<style>
+    body {
+        background-image: url(https://yt3.googleusercontent.com/218eWm8_MCdSwNWT8P0uZi1ZVC9iiUqOJxVGkJb6gXiAqXJ9OkuzwFVEM0YSC8iCdhXRYSiJKw=s900-c-k-c0x00ffffff-no-rj);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
+    div {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        
+    }
+    input, button {
+        margin: 10px;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+
+
+    }
+    table {
+        border: 1px solid orange;
+        background-color: aquamarine;
+        border-collapse: collapse;
+    }
+    th {
+        border: 2px solid orange;
+        text-align: center;
+        align-items: center;
+        padding: 20px;
+        margin: 2px;
+    }
+    th:nth-child(2n) {
+        background-color: white;
+        color: green;
+    }
+    th:nth-child(2n + 1) {
+        background-color: green;
+        color: white;
+    }
+</style>
+<body>
+    
+</body>
+<script>
+
+    function generarTabla() {
+        let filas = parseInt(document.getElementById("rows").value);
+        let columnas = parseInt(document.getElementById("cols").value);
+        let tabla = document.createElement("table");
+        let counter = 0;
+
+        for (let i = 0; i < filas; i++) {
+            var fila = document.createElement("tr");
+            for (let j = 0; j < columnas; j++) {
+                var columna = document.createElement("th");
+                columna.textContent = ++counter;
+                fila.appendChild(columna);
+            }
+            tabla.appendChild(fila);
+        }
+        let container = document.getElementById("container");
+        container.innerHTML = "";
+        container.appendChild(tabla);
+    }
+
+</script>
+</html>

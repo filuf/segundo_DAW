@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T3_2 Cifrado PolialfaBETIco</title>
+</head>
+<body style="display: flex; align-items: center; flex-direction: column; gap: 20px;">
+    <h1>Cifrado Polialfa <span><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg9PWUQauvXmoRYMJJkUS560scLzIfTU5r07xZc_M85cAyFF_29oDTT5V6rCiwdsgLSTtdkGqWt1Zreb7TsnLz19acmgZcMMR1nV9WXJ8RwJZDhH5-rnleUEO4fYgHSZmRVeC1Vj4IOuToH9PxX-f3-qkhmGwPnGmwbTGV8hQLvyuPTaflBxLU6SCpE/s256/Real%20Betis256x.png" alt="betis" height="40px" width="40px"></span> co</h1>
+    <input type="text" name="claro" id="claro" placeholder="texto">
+    <input type="text" name="clave" id="clave" placeholder="clave">
+    <input type="button" value="cifrar" onclick="cifrar()">
+    <div id="mostrar-aqui"></div>
+</body>
+<script>
+    function cifrar () {
+        const CLARO = (document.getElementById("claro").value + "").toLowerCase();
+        const CLAVE = (document.getElementById("clave").value + "").toLowerCase();
+        const ABECEDARIO = "abcdefghijklmnñopqrstuvwxyz"; // a = 0, z = 26
+        const LIMITE_ABECEDARIO = ABECEDARIO.length + 1;
+        let strFinal = "";
+        let contadorClave = 0;
+
+        for (let i = 0 ; i < CLARO.length ; i++) {
+            if (!ABECEDARIO.includes(CLARO.charAt(i)))
+                continue;
+
+            strFinal += ABECEDARIO.charAt(
+                (sumaSegura(ABECEDARIO.indexOf(CLARO.charAt(i)), ABECEDARIO.indexOf(CLAVE.charAt(contadorClave))))
+                % LIMITE_ABECEDARIO);
+            contadorClave = contadorClave < CLAVE.length - 1 ? contadorClave + 1 : 0; //restablece el index de la clave a 0 al llegar al final
+        }
+        mostrarEnDiv("original -> " + CLARO, "final -> " + strFinal);
+    }
+
+    /**
+     * Suma 2 números, siempre que uno no sea un número o sea -1, lo trata como 0
+     */
+    function sumaSegura (num1, num2) {
+        num1 = (typeof(num1) == "number") && num1 != -1 ? num1 : 0;
+        num2 = (typeof(num2) == "number") && num1 != -1 ? num2 : 0;
+        return num1 + num2;
+    }
+
+    function mostrarEnDiv(cadena1, cadena2) {
+        let caja = document.getElementById("mostrar-aqui");
+        caja.innerHTML = "";
+        let cajaCadena1 = document.createElement("p");
+        cajaCadena1.textContent = cadena1;
+        let cajaCadena2 = document.createElement("p");
+        cajaCadena2.textContent = cadena2;
+        caja.appendChild(cajaCadena1);
+        caja.appendChild(cajaCadena2);
+    }
+</script>
+</html>

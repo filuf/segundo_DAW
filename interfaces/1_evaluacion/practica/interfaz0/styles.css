@@ -1,0 +1,22 @@
+#titulo {
+    border: 1px;
+    color: blueviolet;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.botones {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 10%;
+}
+#container {
+    border: 3px;
+    border-color: black;
+    border-style: double;
+    justify-content: space-between;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+.texts {
+    
+}

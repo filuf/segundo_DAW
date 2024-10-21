@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--Aitor Pascual Jimenez-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input::placeholder {
+            text-align: center;
+        }
+        input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;             
+        padding: 10px 20px;        
+        border: none;              
+        border-radius: 5px;        
+        cursor: pointer;           
+        font-size: 16px;           
+        transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+        background-color: #45a049; /* Color de fondo al pasar el ratón */
+        }   
+
+    </style>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="/action-page.php">
+        <label for="primerNombre">Primer nombre</label><br>
+        <input type="text" name="primerNombre" id="1" placeholder="Escribe tú nombre"><br>
+        <label for="segundoNombre">Segundo nombre</label><br>
+        <input type="text" name="segundoNombre" id="2" placeholder="Escribe tú segundo nombre"><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

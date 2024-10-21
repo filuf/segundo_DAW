@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Aitor-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const NUMERO_ALEATORIO = parseInt(Math.random() * 100 + 1);
+    let numeroIntroducido = -1;
+    let numeroDeIntentos = 0;
+
+    while (numeroIntroducido != NUMERO_ALEATORIO) {
+        numeroIntroducido = prompt("[+] Introduce un número entre 1 y 100");
+        if (numeroIntroducido < NUMERO_ALEATORIO) {
+            alert("El número introducido es menor");
+            numeroDeIntentos++;
+        } else if (numeroIntroducido > NUMERO_ALEATORIO) {
+            alert("El número introducido es mayor");
+            numeroDeIntentos++;
+        } else {
+            alert("Enhorabuena, has introducido el número correcto y solo te ha costado " + numeroDeIntentos + " intentos");
+        }
+    }
+</script>
+</html>

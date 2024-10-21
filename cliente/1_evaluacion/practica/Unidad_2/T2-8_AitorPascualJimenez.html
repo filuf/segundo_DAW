@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="" />
+    <link rel="icon" type="image/x-icon" href="https://iesventura.es/_ies_datos/LOGO_new.jpg">
+    <title>Tarea 2-8-2</title>
+</head>
+
+<body>
+    <script>
+        // Solicita al usuario un número entero positivo.
+        // Imprime por consola los pares desde el 2 hasta ese número.
+        // Imprime por consola los impares desde ese número hasta el 1.
+
+        let limiteTemp;
+        do {
+            limiteTemp = prompt("Dame un número");
+        } while (isNaN(limiteTemp));
+        const LIMITE = parseInt(limiteTemp);
+
+        let arrayNum = [];
+        for (let i = 1; i <= LIMITE; i++) { //0 no es natural
+            arrayNum[i] = i;
+        }
+
+        const isEven = numero => numero % 2 == 0;
+        const isOdd = numero => numero % 2 == 1;
+        const printElements = element => document.write(element+" ");
+
+        document.write("<p> Pares </p>");
+        arrayNum.filter(isEven).forEach(printElements);
+
+        document.write("<p> Inpares </p>");
+        arrayNum.filter(isOdd).reverse().forEach(printElements);
+
+    </script>
+</body>
+
+</html>

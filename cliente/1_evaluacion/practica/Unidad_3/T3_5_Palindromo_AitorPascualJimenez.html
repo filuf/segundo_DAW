@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" value="aitor">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <button onclick="isPalindromo()">dale</button>
+</head>
+<body>
+    
+</body>
+<script>
+   function isPalindromo() {
+        const cadena = "soos";
+        let boolean;
+
+        if (cadena.length % 2 == 0) {
+            boolean = cadena.substring(cadena.length / 2, cadena.length).split('').reverse().join('') == cadena.substring(0, cadena.length / 2);
+        } else
+            boolean = NaN;
+        console.log(boolean);
+
+        
+    }
+</script>
+</html>

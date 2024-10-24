@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formato: nombre:apellidos:dni:telefono:email:codigopostal”</h1>
+    <input type="text" name="usuario" id="usuario" placeholder="Introduce una cadena">
+    <button onclick="instanciaYMuestra()">Enviar</button><br><br>
+</body>
+<script>
+    class Persona {
+
+        static contadorOsos = 0;
+
+        /**
+         * Instancia un objeto de la clase Persona
+         * 
+         * @param {string} cadenaSinParsear 
+         * Recibe una cadena con este formato -> “nombre:apellidos:dni:telefono:email:codigopostal”
+         * 
+         * Separa esta cadena por los ':' y crea nuevos atributos para indicar si el DNI es válido,
+         * para extraer el dominio del correo electrónico, para generar un nombre de usuario con este patrón
+         * y le asigna el pais de España
+         */
+        constructor(cadenaSinParsear) {
+            let array = cadenaSinParsear.split(":");
+            //no tiene control de errores
+            this.nombre = array[0];
+            this.apellido = array[1];
+            this.dni = array[2];
+            this.telefono = array[3];
+            this.email = array[4];
+            this.codigoPostal = array[5];
+            this.dniValido = this.validarDni(this.dni);
+            this.servidor = this.extraerDominio(this.email);
+            this.username = this.generarUsername(this.nombre, this.apellido);
+            this.pais = String.fromCodePoint(0x1F1EA, 0x1F1F8);
+
+            if (this.nombre.charAt(0).concat(this.apellido.substring(0,2)).toLowerCase() == "oso") { 
+                Persona.contadorOsos++;
+            }
+        }
+
+        /**
+         * @param {string} dni dni de 9 dígitos con letra
+         */
+        validarDni(dni) {
+            const numerosDni = parseInt(dni.substring(0, 8));
+            const letraDni = dni.charAt(8).toUpperCase();
+            const indexLetrasDni = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+            return indexLetrasDni.charAt(numerosDni % 23) == letraDni; 
+        }
+        /**
+         * Extrae el domilio del email
+         * 
+         * @param {string} email 
+         */
+        extraerDominio(email) {
+            return email.substring(email.indexOf("@") + 1);
+        }
+
+        /**
+         * Genera un nombre de usuario con este formato:
+         * primera letra del nombre, las tres últimas del apellido separadas por un carácter “_”
+         * 
+         * @param {string} nombre 
+         * @param {string} apellido
+         */
+        generarUsername(nombre, apellido) {
+            return nombre.charAt(0) + "_" + apellido.substring(apellido.length - 3);
+        }
+        /**
+         * Imprime el nombre y pais usando document.write
+         */
+        mostrarUsuarioYBandera(){
+            document.write("Usuario => " + this.username + " | Pais => " + this.pais + "<br>");
+        }
+        /**
+         * Metodo estático que muestra un alert alertando de osos en el caso de que haya alguno
+         * 
+         */
+        static mostrarNumeroOsos(){
+            if(Persona.contadorOsos > 1) {
+                alert("¡Cuidado, hay " + Persona.contadorOsos + " osos cerca!");
+            } else if (Persona.contadorOsos == 1) {
+                alert("¡Cuidado, hay " + Persona.contadorOsos + " oso cerca!");
+            }
+        }
+    }
+
+    //instancio 5 objetos de la clase Persona
+    const rocio = new Persona("Rocio:Osorno:01101315Y:612345649:rocio@outlook.com:28001");
+    const sonia = new Persona("Sonia: Sastre:15340807Z:765430987:ssastre@gmail.com:43071");
+    const olivia = new Persona("Olivia:Soriano:46216401X:654567098:osor01@educa.madrid.org:28660");
+    const elena = new Persona("Elena:Costaguta:70068005T:7123098654:ecostag@madrid.org:45230");
+    const orestes = new Persona("Orestes:Sosa:52243028T::sosaorestes2000@yahoo.com:28001");
+
+    //añade los objetos a un Set
+    let personas = new Set();
+    personas.add(rocio).add(sonia).add(olivia).add(elena).add(orestes);
+
+    //lo recorro invocando el método mostrarUsuarioYBandera
+    personas.forEach(pers => pers.mostrarUsuarioYBandera());
+
+    //invoco el método estático mostrarNumeroOsos
+    Persona.mostrarNumeroOsos();
+
+    /**
+     * Extrae el contenido del input#usuario, lo usa para instanciar un objeto de la clase Persona
+     * lo muestra por pantalla usando document.write
+     * comprueba si el número de osos ha cambiado para volver a invocar el método estático mostrarNumeroOsos
+     */
+    function instanciaYMuestra() {
+        const numeroOsosPrevio = Persona.contadorOsos;
+        const cadena = document.getElementById("usuario").value;
+        const persona = new Persona(cadena);
+        persona.mostrarUsuarioYBandera();
+
+        //muestra el mensaje de alerta si el número de osos cambia al generar a esta persona
+        if (numeroOsosPrevio != Persona.contadorOsos) {
+            Persona.mostrarNumeroOsos();
+        }
+    }
+</script>
+</html>

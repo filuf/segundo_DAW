@@ -45,7 +45,7 @@ article {
     align-content: flex-start;
     justify-content: space-evenly;
     gap: 30px;
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: #f1f5f9;
     padding: 30px;
 }
@@ -99,6 +99,7 @@ article {
 }
 
 #titulo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     justify-self: start;
     display: inline-block;
     width: max-content;
@@ -107,28 +108,27 @@ article {
     grid-column-start: 1;
     grid-column-end: auto;
     border-radius: 20px;
-    background-color: rgb(228, 207, 162);
+    background-color: rgb(200, 148, 230);
     margin-bottom: 30px;
     margin-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
 }
 h1 {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 aside {
     width: 300px;
-    max-height: 1360px;
+    max-height: 560px;
     background-color: #f1f5f9;
     padding: 30px;
-    border: solid black 1px;
-    border-radius: 10px;
+    border-radius: 30px;
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start: 1;
 }
 #barrabaja {
     border-bottom: 1px solid black;
-    
+    margin-bottom: 10px;
 }

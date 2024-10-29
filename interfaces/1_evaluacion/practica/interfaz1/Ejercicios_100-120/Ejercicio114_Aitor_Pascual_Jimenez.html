@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <h1>Cambiando texto con js</h1>
+    <p id="texto">Este texto debe ser "hola" cuando pulses el botón</p>
+
+    <button id="boton">Pulsame</button>
+</body>
+
+<script>
+    document.getElementById("boton")
+        .addEventListener("click", () => document.getElementById("texto").innerHTML = "hola");
+</script>
+</html>

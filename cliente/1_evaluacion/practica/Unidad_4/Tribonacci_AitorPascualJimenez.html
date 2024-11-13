@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Aitor">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribonacci</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log(tribonacciIterativo(10));
+    //console.log(tribonacciRecursivo(10));
+    
+
+    /**
+     * 
+     * @param {number} index 
+     * 
+     */
+    function tribonacciIterativo(index) {
+        let arr = [0,1,1];
+
+        if (index <= 0) return 0;
+        if (index === 1 || index === 2) return 1;
+
+        for (; index > 0; index--) {
+            arr[0] = arr[1];
+            arr[1] = arr[2];
+            arr[2] = arr[0] + arr[1]
+        }
+
+        return arr[2];
+    }
+
+    /**
+     * 
+     * @param {number} index 
+     * 
+     */
+    function tribonacciRecursivo(index) {
+
+    }
+
+
+</script>
+</html>

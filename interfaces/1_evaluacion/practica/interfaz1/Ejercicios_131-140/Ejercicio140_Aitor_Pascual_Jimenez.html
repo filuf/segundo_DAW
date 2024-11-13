@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Preseleccionar una opción</h1>
+    <form action="/action_page.php">
+        <label for="languaje">Escoge un lenguaje</label>
+        <select name="languaje" id="languaje">
+            <optgroup label="backend">
+                <option value="Java">Java</option>
+                <option value="PHP">PHP</option>
+            </optgroup>
+            <optgroup label="frontend">
+                <option value="JavaScript">JavaScript</option>
+                <option value="TypeScript" selected>TypeScript</option>
+            </optgroup>
+        </select>
+    </form>
+    <p>Con el atributo <strong>selected</strong> puedes dejar una opción predefinida</p>
+</body>
+</html>

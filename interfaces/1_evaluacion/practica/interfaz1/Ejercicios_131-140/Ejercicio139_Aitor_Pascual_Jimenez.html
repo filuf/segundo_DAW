@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Elemento select</h1>
+    <form action="/action_page.php">
+        <label for="languaje">Escoge un lenguaje</label>
+        <select name="languaje" id="languaje">
+            <optgroup label="backend">
+                <option value="Java">Java</option>
+                <option value="PHP">PHP</option>
+            </optgroup>
+            <optgroup label="frontend">
+                <option value="JavaScript">JavaScript</option>
+                <option value="TypeScript">TypeScript</option>
+            </optgroup>
+        </select>
+    </form>
+    <p>Al usar la etiqueta <strong>select</strong>, podemos predefinir opciones con la etiqueta <strong>option</strong></p>
+    <p>Estas opciones pueden estar englobadas en grupos al hacerlas hijas de la etiqueta <strong>optgroup</strong></p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Canvas 2</h1>
+    <canvas id="figura" width="200px" height="100px" style="border: 1px solid black;"></canvas>
+</body>
+<script>
+    /**
+     * @type {HTMLCanvasElement}
+     */
+    let figura = document.getElementById("figura");
+    let context = figura.getContext("2d");
+    context.moveTo(0, 0);
+    context.lineTo(200, 100);
+    context.stroke();
+</script>
+</html>

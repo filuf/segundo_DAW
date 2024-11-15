@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Canvas 7</h1>
+    <canvas id="figura" width="200px" height="100px" style="border: 1px solid black;"></canvas>
+</body>
+<script>
+    /**
+     * @type {HTMLCanvasElement}
+     */
+    let figura = document.getElementById("figura");
+    let context = figura.getContext("2d");
+
+    let gradiente = context.createRadialGradient(75,50,5,90,60,100);
+    gradiente.addColorStop(0, "green");
+    gradiente.addColorStop(1, "white");
+    context.fillStyle = gradiente;
+    context.fillRect(10,10,150,80);
+</script>
+</html>

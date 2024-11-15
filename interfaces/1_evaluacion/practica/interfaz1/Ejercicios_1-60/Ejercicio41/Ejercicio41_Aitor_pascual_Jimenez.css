@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+    color: palegoldenrod;
+    background-color: darkorchid;
+}
+body {
+    background-color: brown;
+}
+p {
+    color: violet;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+}

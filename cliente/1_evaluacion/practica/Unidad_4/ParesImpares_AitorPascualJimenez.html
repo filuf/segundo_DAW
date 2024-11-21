@@ -11,6 +11,7 @@
 </body>
 <script>
 
+
     class contarParesImpares {
         #arrayParesEImpares;
 
@@ -61,14 +62,29 @@
         }
     }
 
+    /**
+     * Imprimer por pantalla el array ordenado y su recuento de pares e impares
+     * @param {number[]} arr 
+     */
+    function contarEImprimirParesEImparesArray (arr) {
+        
+        let obj = new contarParesImpares(arr);
+        let mapa = new Map();
 
-    //TEST, HACER FINAL CON 40 NÚMEROS DEL 1 AL 50 Y UNA INTERFAZ DECENTE
-    let arr = [1,23,5443,123,356,12,245,1,23,412,34563,1,23,245,12,345,34,14,225,6]; //13 imp | 7 prs
+        mapa.set("pares", obj.getPares());
+        mapa.set("impares", obj.getImpares());
 
-    let obj = new contarParesImpares(arr);
-    console.log("pares - " + obj.getPares());
-    console.log("impares - " + obj.getImpares());
+        document.write("Elementos del array - ")
+        arr.sort( (a, b) => a - b).forEach(element => {
+            document.write(element + " ")
+        });
+        document.write("<br><br>Pares => " + mapa.get("pares"));
+        document.write("<br>Impares => " + mapa.get("impares"));
+    }
 
-    
+    let arr = Array.from({ length: 40 }, () => Math.floor(Math.random() * 50) + 1);
+
+    contarEImprimirParesEImparesArray(arr);
+
 </script>
 </html>

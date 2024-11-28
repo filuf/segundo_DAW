@@ -1,12 +1,9 @@
 /ENGLISH
-/cliente/1_evaluacion/teoria/
+/cliente/1_evaluacion/teoria
 /cliente/1_evaluacion/practica/pruebas/
-/despliegue/1_evaluacion/teoria/
-/despliegue/2_evaluacion/teoria/
-/despliegue/intercambioVM/
-/servidor/1_evaluacion/teoria/
+/despliegue/1_evaluacion/teoria
+/despliegue/2_evaluacion/teoria
+/despliegue/intercambioVM
+/servidor/1_evaluacion/teoria
 /servidor/1_evaluacion/codigo/htdocs_backup/Tarea_3_9_Correo
-/servidor/2_evaluacion/teoria/
-
-# Borrar al completar
-/despliegue/1_evaluacion/practica/FTP
+/servidor/2_evaluacion/teoria

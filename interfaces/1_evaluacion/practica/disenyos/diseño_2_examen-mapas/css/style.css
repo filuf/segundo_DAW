@@ -1,4 +1,4 @@
-div {
+div { /*remove */
     border: 2px solid green;
     background-color: aliceblue;
 }
@@ -10,7 +10,6 @@ div {
 html, body {
     padding: 0px;
     margin: 0px;
-    overflow-x: hidden;
 }
 
 body {
@@ -22,8 +21,10 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     height: 100vh;
-}
 
+    overflow-x: hidden;
+}
+/*menu header*/
 .menu {
     justify-self: center;
 
@@ -64,6 +65,26 @@ body {
     filter: drop-shadow(0px 0px 5px gray);
 }
 
+.menu__item__option {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    height: 80%;
+    width: 80%;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: transparent;
+
+    transition: all 0.35s ease-in-out;
+}
+
+.menu__item__option:hover {
+    background-color: rgba(128, 128, 128, 0.385);
+    border: 0.5px solid silver;
+}
+/*tittle and subtittle*/
 h1 {
     color: rgb(209, 223, 244);
     font-family: Inter,Inter Prevent Layout Shift,system-ui,sans-serif;
@@ -94,22 +115,52 @@ h2 {
     height: 100vh;
 }
 
-.menu__item__option {
+/*slider*/
+.slider__inner {
+    width: 100%;
+    height: 100%;
+    background-color: violet;
+    margin: 0;
+    padding: 0;
+
     display: flex;
-    text-align: center;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    height: 80%;
-    width: 80%;
-    margin: 10px;
-    border-radius: 20px;
-    background-color: transparent;
-
-    transition: all 0.35s ease-in-out;
+    padding-top: 70px;
 }
 
-.menu__item__option:hover {
-    background-color: rgba(128, 128, 128, 0.385);
-    border: 0.5px solid silver;
+.slider__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.slider__images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.map__image {
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
+    height: 576px;
+    width: 1134px;
+    border-radius: 15px;
+    margin: 5px;
+    object-fit: cover;
+    filter: saturate(175%);
+}
+
+.slider__text {
+    overflow: hidden;
+    position: absolute;
+    flex-direction: column;
+    transform: translateY(0px);
+    margin-bottom: 9px;
+    backdrop-filter: blur(20px);
 }

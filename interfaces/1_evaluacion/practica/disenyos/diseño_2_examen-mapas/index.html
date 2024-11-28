@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="resources/compass-maps-and-location-svgrepo-com.svg" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen interfaces Aitor Pascual Jiménez</title>
@@ -10,7 +11,7 @@
 <body>
     <header class="menu">
         <div class="menu__item" id="menu__item-1">
-            <img class="menu__item__image" src="dependecias/logo.png" alt="logo">
+            <img class="menu__item__image" src="resources/logo.png" alt="logo">
         </div>
         <div class="menu__item" id="menu__item-2">
             <div class="menu__item__option">
@@ -28,9 +29,39 @@
         </div>
     </header>
     <main class="layout__main">
+        <!--main title-->
         <h1>Conviértete en un experto en <span>MAPAS HISTÓRICOS</span></h1>
         <h2>Todo lo que necesitas aprender en un sólo lugar</h2>
 
+        <!--slider-->
+        <div class="slider__inner">
+
+            <div id="back" class="slider__container">
+                <div class="back__button">
+                    <img class="control__image" src="resources/back.svg" alt="back button" loading="lazy">
+                </div>
+
+                <div class="slider__images">
+                    <div id="img">
+                        <img class="map__image" src="resources/Imperium_Alejandro_Magno.png" alt="Imperium_Alejandro_Magno" class="map__image">
+                    </div>
+                    <div id="text" class="slider__text">
+                        <h3>titulo mapa</h3>
+                        <p>bla bla bla</p>
+                    </div>
+                </div>
+
+                <div id="forward" class="forward__button">
+                    <img class="control__image" src="resources/forward.svg" alt="back button" loading="lazy">
+                </div>
+
+            </div>
+            
+            <div class="points" id="points"></div>
+
+        </div>
+
     </main>
 </body>
+<script src="scripts/slider.js"></script>
 </html>

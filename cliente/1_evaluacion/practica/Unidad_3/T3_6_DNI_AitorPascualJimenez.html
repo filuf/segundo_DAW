@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T3_6</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+console.log(validarDNI("74801607H"));
+
+
+    /**
+     * Comprueba si un DNI es válido
+     * @param {string} dni a validar
+     * @returns {boolean} Devuevle true si el DNI es válido
+     */
+    function validarDNI(dni) {
+
+        /*
+        devuelve falso si el dni tiene más de 9 caracteres
+        Concatena ceros al principio en el caso de que el dni tenga menos de 9 caracteres 
+        */
+        if (dni.length > 9) {
+            return false;
+        } else if (dni.length < 9) {
+            dni = "0".repeat(9 - dni.length) + dni;
+        }
+
+        /**
+         * @param {string} dni
+         * @returns {boolean}
+         */
+        const VALIDACION_ESTRUCTURA = dni => /^[0-9]{8}[TRWAGMYFPDXBNJZSQVHLCKET]$/i.test(dni);
+
+        /**
+         * @param {string} dni
+         * @returns {boolean}
+         */
+        const VALIDACION_LETRA = dni => "TRWAGMYFPDXBNJZSQVHLCKET".charAt((parseInt(dni.substring(0, 8)) % 23)) == dni.charAt(8);
+
+        return VALIDACION_ESTRUCTURA(dni) && VALIDACION_LETRA(dni);
+    }
+</script>
+</html>

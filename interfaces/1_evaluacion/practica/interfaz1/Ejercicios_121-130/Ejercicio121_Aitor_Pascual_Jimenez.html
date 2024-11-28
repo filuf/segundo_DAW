@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    body {
+        background-color: cadetblue;
+    }
+    div {
+        background-color: white;
+        border: 2px solid slateblue;
+        height: 250px;
+        width: 250px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+    <h1>MI PRIMER JS</h1>
+    <p>Aquí podemos ver la diferencia entre un lenguaje de programación y uno de maquetación.</p>
+    <div id="div-1">
+        
+    </div>
+    <button type="button" id="but-1">LENGUAJE DE PROGRAMACION</button>
+    <button type="button" id="but-2">LO OTRO</button>
+</body>
+<script>
+    //eventos
+    document.getElementById("but-1").addEventListener("click", function() {showLanguaje(true)});
+    document.getElementById("but-2").addEventListener("click", function() {showLanguaje(false)});
+
+    function showLanguaje(bool) {
+        let div = document.getElementById("div-1");
+        let img = document.createElement("img");
+
+        div.innerHTML = ""; //limpia el elemento
+        if (bool == true) {
+            img.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png");
+        } else {
+            img.setAttribute("src", "https://cdn-icons-png.flaticon.com/512/174/174854.png");
+        }
+        img.setAttribute("width", "200px")
+        img.setAttribute("heigh", "200px")
+        div.appendChild(img);
+    } 
+</script>
+</html>

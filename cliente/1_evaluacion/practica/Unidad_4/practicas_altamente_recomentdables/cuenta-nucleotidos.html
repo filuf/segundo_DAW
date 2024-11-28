@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    /**
+     * @param {string[]} array 
+     */
+    function cuentaNucleotidos(array) {
+        let mapa = new Map([
+            ["A", 0],
+            ["C", 0],
+            ["G", 0],
+            ["T", 0]
+        ]);
+
+        /*itera sobre cada elemento del array aumentando en 1 el valor de cada nucleotido que encuentre, 
+          devolviendo un error al no encontrar ningún nucleotido en una iteración
+          o un mapa con el nucleotido como clave y el número de veces que lo encuentra como valor*/
+        for (const nucleotido of array) {
+            switch (nucleotido) {
+                case "A":
+                    mapa.set("A", mapa.get("A") + 1);
+                    break;
+                case "C":
+                    mapa.set("C", mapa.get("C") + 1);
+                    break;
+                case "G":
+                    mapa.set("G", mapa.get("G") + 1);
+                    break;
+                case "T":
+                    mapa.set("T", mapa.get("T") + 1);
+                    break;
+                default:
+                    return "Error: Secuencia de ADN no válida. Sólo debe contener 'A', 'C', 'G' o 'T'.";
+                    break;
+            }
+        }
+        return (mapa);
+    }
+
+    console.log(cuentaNucleotidos(['G', 'T', 'T', 'A', 'C', 'A']));
+    console.log(cuentaNucleotidos(['A','T','G','G','C','T','T','A','I','G']));
+    
+    document.write("<h1>&#x1F9EC Revisa la consola &#x1F9EC</h1>")
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Aitor">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+
+    class contarParesImpares {
+        #arrayParesEImpares;
+
+        /**
+         * Llena el atributo arrayParesEImpares
+         * con el resultado de pares en el ínidice 0 e impares en  el índice 1
+         * 
+         * @param {number[]} numeros array de number sobre el que contar pares e impares
+         */
+        constructor(numeros) {    
+            this.#arrayParesEImpares = [];
+            this.#arrayParesEImpares[0] = this.#pares(numeros);
+            this.#arrayParesEImpares[1] = this.#impares(numeros);
+        }
+
+        /**
+         * Devuelve la cantidad de números pares en un array del tipo numeros
+         * 
+         * @param {number[]} numeros 
+         * @returns {number} devuelve el número de pares
+         */
+        #pares(numeros) {
+            return numeros.filter( n => n % 2 === 0).length;
+        }
+
+        /**
+         * Devuelve la cantidad de números impares en un array del tipo numeros
+         * 
+         * @param {number[]} numeros 
+         * @returns {number} devuelve el número de impares
+         */
+        #impares(numeros) {            
+            return numeros.filter( n => n % 2 === 1).length;
+        }
+
+        /**
+         * Devuelve el número de pares en el objeto
+         */
+        getPares() {            
+            return this.#arrayParesEImpares[0];
+        }
+
+        /**
+         * Devuelve el número de impares en el objeto
+         */
+        getImpares() {
+            return this.#arrayParesEImpares[1];
+        }
+    }
+
+    /**
+     * Imprimer por pantalla el array ordenado y su recuento de pares e impares
+     * @param {number[]} arr 
+     */
+    function contarEImprimirParesEImparesArray (arr) {
+        
+        let obj = new contarParesImpares(arr);
+        let mapa = new Map();
+
+        mapa.set("pares", obj.getPares());
+        mapa.set("impares", obj.getImpares());
+
+        document.write("Elementos del array - ")
+        arr.sort( (a, b) => a - b).forEach(element => {
+            document.write(element + " ")
+        });
+        document.write("<br><br>Pares => " + mapa.get("pares"));
+        document.write("<br>Impares => " + mapa.get("impares"));
+    }
+
+    let arr = Array.from({ length: 40 }, () => Math.floor(Math.random() * 50) + 1);
+
+    contarEImprimirParesEImparesArray(arr);
+
+</script>
+</html>

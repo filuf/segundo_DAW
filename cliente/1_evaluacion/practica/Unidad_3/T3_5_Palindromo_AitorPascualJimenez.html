@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" value="aitor">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Tiny5&display=swap" rel="stylesheet">
+</head>
+<style>
+
+.fuente {
+    text-align: center;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+}
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(304deg, rgba(0,0,0,1) 0%, rgba(84,6,72,1) 50%, rgba(255,0,224,1) 100%);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.form-container {
+    border: 4px solid gray;
+    background: linear-gradient(304deg, rgba(6,113,120,1) 0%, rgba(2,254,255,1) 50%);
+    border-radius: 30px;
+    height: 100px;
+    min-width: 400px;
+    width: 40%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+}
+button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(156, 255, 255);
+}
+button:active {
+    background-color: rgb(185, 185, 185);
+}
+input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(156, 255, 255);
+}
+.output {
+    border: 1px solid blue;
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+p {
+    color: aquamarine;
+    font-size: 30px;
+}
+</style>
+<body>
+    <H1 class="fuente">ES PALÍNDROMO</H1>
+    <div class="container">
+        <div class="form-container">
+            <input type="text" name="palíndromo" id="palindromo">
+            <button onclick="isPalindromo()">Es palíndromo</button>
+        </div>
+        <div id="output">
+        
+        </div>
+    </div>
+</body>
+<script>
+/*
+Crea un código que, dado un texto: 
+    1.- Lo devuelva dado la vuelta. 
+    2.- Indique si es un palíndromo.
+*/
+   function isPalindromo() {
+        let cadena = document.getElementById("palindromo").value;
+        const devolver = cadena.split(" ").reverse(); //cadena inversa a devolver
+        let boolean;
+
+        cadena = cadena.replaceAll(" ", "").toLowerCase(); //elimina espacios y convierte a minúscula
+        console.log(cadena);
+        if (cadena.length % 2 == 0)
+            boolean = cadena.substring(cadena.length / 2, cadena.length).split('').reverse().join('') == cadena.substring(0, cadena.length / 2);
+        else 
+            boolean = cadena.substring(cadena.length / 2, cadena.length).split('').reverse().join('') == cadena.substring(0, cadena.length / 2 + 1);
+
+        let output = document.getElementById("output");
+        if (output.firstChild) { //si tiene un hijo lo elimina
+            output.removeChild(output.firstChild);
+        }
+
+        let p = document.createElement("p");
+        if (boolean == true) {
+            p.textContent = "LA CADENA ES PALÍNDROMA";
+        } else {
+            p.textContent = "LA CADENA NO ES PALÍNDROMA";
+        }
+        output.appendChild(p);
+
+        console.log("[+] Cadena original dada la vuelta => " + devolver);
+        return (devolver);
+    }
+</script>
+</html>

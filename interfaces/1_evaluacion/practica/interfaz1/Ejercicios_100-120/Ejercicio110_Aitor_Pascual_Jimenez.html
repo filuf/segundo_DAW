@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: blueviolet;
+    }
+    .ciudad {
+        margin: 20px;
+        padding: 20px;
+        max-width: 40%;
+        border: 1px solid black;
+        border-radius: 10px;
+        background-color: teal;
+        color: white;
+    }
+    .ciudad :first-child {
+        font-weight: bold;
+    }
+    #boton-final {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        border: 1px solid;
+        background-color: aquamarine;
+        font-weight: bold;
+        font-size: 200%;
+        margin: 7% 20%;
+    }
+</style>
+<body>
+    <div class="ciudad">
+        <p>Ciudad</p>
+        <p>Descripción de ciudad</p>
+    </div>
+    <div class="ciudad">
+        <p>Ciudad</p>
+        <p>Descripción de ciudad</p>
+    </div>
+    <div class="ciudad">
+        <p>Ciudad</p>
+        <p>Descripción de ciudad</p>
+    </div>
+    <div id="boton-final">
+        <p>¿No te gustan las ciudades?</p>
+        <button onclick="ocultar()">BORRALAS</button>
+    </div>
+
+</body>
+<script>
+    function ocultar () {
+        let ciudades = Array.from(document.getElementsByClassName("ciudad"));
+        ciudades.forEach(ciudad => {
+            ciudad.style.display = "none";
+        });
+        document.getElementById("boton-final").style.display = "none";
+        document.write("<h1>Enhorabuena, eres un destructor de ciudades</h1>");
+    }
+</script>
+</html>

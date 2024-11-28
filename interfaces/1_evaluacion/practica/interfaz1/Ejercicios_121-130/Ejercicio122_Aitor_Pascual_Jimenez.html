@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    body {
+        background-color: cadetblue;
+    }
+    div {
+        background-color: white;
+        border: 2px solid slateblue;
+        height: 250px;
+        width: 250px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+    <h1>Manipula JS usansdo ID</h1>
+    <p>Tenemos un contador que se autoincrementa al pulsar el botón</p>
+    <p id="counter">Contador: 0</p>
+    <button type="button" onclick="increment()">incrementa</button>
+
+</body>
+<script>
+    function increment () {
+        /**
+         * @type {HTMLParagraphElement}
+         */
+        let p = document.getElementById("counter");
+        let text = p.textContent;
+        let numero = parseInt(
+            text.substring(text.indexOf(" ") + 1)); //devuelve el numero posterior al espacio
+        p.textContent = "contador: " + (numero + 1);
+    }
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    header {
+        background-color: rgb(102, 102, 102);
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white;
+    }
+    section {
+        display: flex;
+    }
+    nav {
+        flex: 1;
+        background: #ccc;
+        padding: 20px;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    article {
+        flex: 3;
+        padding: 10px;
+        background-color: #f1f1f1;
+    }
+    section::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    footer {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    @media (max-width: 600px) {
+        section {
+            flex-direction: column;
+        }
+    }
+</style>
+<body>
+    <h1>CSS Flotante</h1>
+    <header>
+        <h2>CITIES</h2>
+    </header>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h3>London</h3>
+            <p>Texto sobre Londres</p>
+            <p>Más texto</p>
+        </article>
+    </section>
+    <footer>
+        <p>footer</p>
+    </footer>
+</body>
+</html>

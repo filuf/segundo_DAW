@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- Aitor Pascual Jiménez -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body style="background-color: paleturquoise;">
+    <h1>Botón llama a función</h1>
+    <button onclick="miFuncion()">muestra una imagen</button>
+    <p id="mostrar"></p>
+</body>
+<script>
+    function miFuncion() {
+        let pElement = document.getElementById("mostrar");
+        let imagen = document.createElement("img");
+
+        if (pElement.firstChild) { //si la foto de Agustín existe, la elimina
+            pElement.firstChild.removeChild(pElement.firstChild());
+        }
+
+        //guarda la foto de Agustín y la muestra
+        imagen.src = "https://media.licdn.com/dms/image/v2/D4D03AQG6X6PJGsGqfw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1685521010827?e=1735776000&v=beta&t=dx88fVqudFkKT_laSgahdw61Zp9jIQv_EXqUY3n4IrQ";
+        pElement.appendChild(imagen);
+    }
+</script>
+</html>

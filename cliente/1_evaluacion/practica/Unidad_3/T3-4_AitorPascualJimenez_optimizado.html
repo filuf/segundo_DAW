@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script> //forma optima
+    for (let vuelta = 1; vuelta <= 6; vuelta++) {
+        let arrayNum = [];
+        let num;
+
+        while (arrayNum.length < 6) {
+            num = parseInt(Math.random() * (49) + 1);
+            if (!arrayNum.includes(num))
+                arrayNum.push(num);
+        }
+
+        document.write("billete " + vuelta + " => ");
+        for (let i = 0; i < 6; i++) {
+            document.write(arrayNum[i]);
+            if (i < 5)
+                document.write(", ");
+            else
+                document.write("<br>");
+        }
+    }
+</script>
+</html>

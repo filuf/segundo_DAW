@@ -1,0 +1,15 @@
+.table__container {
+    padding-left: 33%;
+    padding-right: 33%;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+tr {
+    border-bottom: 3px solid rgb(16, 27, 228);
+}

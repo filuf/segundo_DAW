@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background: rgb(0,8,54);
+    background: linear-gradient(0deg, rgba(0,8,54,1) 0%, rgba(0,24,163,1) 100%);
+    background-attachment: fixed;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+
+    overflow-x: hidden;
+}
+/*menu header*/
+.menu {
+    justify-self: center;
+
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    max-width: 1080px;
+    height: 80px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu__item {
+    background: transparent;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    max-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.menu__item__logo {
+    margin: 0px;
+    padding: 0px;
+    height: 60px;
+    width: 150px;
+    transition: all 0.2s ease-in;
+}
+
+.menu__item__image {
+    margin: 0px;
+    padding: 0px;
+    height: 40px;
+    width: 60px;
+    transition: all 0.2s ease-in;
+}
+
+.menu__item__logo:hover, .menu__item__image:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 5px gray);
+}
+
+.menu__item__option {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    height: 80%;
+    width: 80%;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: transparent;
+
+    transition: all 0.35s ease-in-out;
+}
+
+.menu__item__option:hover {
+    background-color: rgba(128, 128, 128, 0.385);
+    border: 0.5px solid silver;
+}
+
+/*tittle and subtittle*/
+h1 {
+    color: rgb(209, 223, 244);
+    font-family: Inter,Inter Prevent Layout Shift,system-ui,sans-serif;
+    font-weight: 700;
+    font-size: 4.5rem; 
+    text-align: center; 
+    max-width: 20ch; 
+    margin-left: auto; 
+    margin-right: auto; 
+    line-height: 1.16; 
+}
+h1 span {
+    color: rgb(0, 76, 255);
+}
+h2 {
+    color: rgb(209, 223, 244);
+    font-family: Inter,Inter Prevent Layout Shift,system-ui,sans-serif;
+    font-weight: 700;
+    font-size: 2rem; 
+    text-align: center; 
+    max-width: 45ch; 
+    margin-left: auto; 
+    margin-right: auto; 
+    line-height: 1.16; 
+}
+
+.layout__main {
+    height: 100vh;
+}

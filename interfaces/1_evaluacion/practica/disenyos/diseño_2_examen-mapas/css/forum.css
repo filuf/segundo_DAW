@@ -1,0 +1,9 @@
+.forum__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.forum__container img {
+    border-radius: 40px;
+    border: 6px solid navy;
+}

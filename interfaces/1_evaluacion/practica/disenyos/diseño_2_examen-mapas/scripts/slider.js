@@ -32,7 +32,7 @@ atras.addEventListener('click', function(){
         actual = imagenes.length - 1;
     }
 
-    imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`;
+    imagen.innerHTML = ` <img class="map__image" src="${imagenes[actual].url}" alt="map__image" loading="lazy"></img>`;
     texto.innerHTML = `
     <h3>${imagenes[actual].nombre}</h3>
     <p>${imagenes[actual].descripcion}</p>
@@ -46,7 +46,7 @@ adelante.addEventListener('click', function(){
         actual = 0;
     }
 
-    imagen.innerHTML = ` <img class="img" src="${imagenes[actual].url}" alt="logo pagina" loading="lazy"></img>`;
+    imagen.innerHTML = ` <img class="map__image" src="${imagenes[actual].url}" alt="map__image" loading="lazy"></img>`;
     texto.innerHTML = `
     <h3>${imagenes[actual].nombre}</h3>
     <p>${imagenes[actual].descripcion}</p>

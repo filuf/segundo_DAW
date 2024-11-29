@@ -1,18 +1,18 @@
 let imagenes = [
     {
-        "url": "img/img1.webp",
+        "url": "resources/spain_S16.png",
         "nombre": "Proyecto 01",
         "descripcion": "Este es el proyecto 01 fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
 
     },
     {
-        "url": "img/img2.webp",
+        "url": "resources/Imperium_Alejandro_Magno.png",
         "nombre": "Proyecto 02",
         "descripcion": "Hola a todos este es el proyecto02 y fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
 
     },
     {
-        "url": "img/img3.webp",
+        "url": "resources/britain_imperium.png",
         "nombre": "Proyecto 03",
         "descripcion": "Este proyecto, es el 03 y fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
 
@@ -20,18 +20,19 @@ let imagenes = [
 ]
 
 
-let atras = document.getElementById('atras');
-let adelante = document.getElementById('adelante');
+let atras = document.getElementById('back');
+let adelante = document.getElementById('forward');
 let imagen = document.getElementById('img');
-let puntos = document.getElementById('puntos');
-let texto = document.getElementById('texto')
+let puntos = document.getElementById('points');
+let texto = document.getElementById('text')
 let actual = 0
 posicionCarrusel()
 
 atras.addEventListener('click', function(){
     actual -=1
 
-    if (actual == -1){
+    //pasa de la primera a la última imagen
+    if (actual == -1){ 
         actual = imagenes.length - 1
     }
 
@@ -45,6 +46,7 @@ atras.addEventListener('click', function(){
 adelante.addEventListener('click', function(){
     actual +=1
 
+    //pasa de la última a la primera imagen
     if (actual == imagenes.length){
         actual = 0
     }

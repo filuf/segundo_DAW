@@ -1,0 +1,45 @@
+p.ex1{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: #ff0000;
+}
+p.ex2{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: #0000ff;
+}
+p.ex3{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: #bbbbbb;
+}
+p.ex4{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: rgb(255,0,0);
+}
+p.ex5{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: rgb(0,0,255);
+}
+p.ex6{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: rgb(187,187,187);
+}
+p.ex7{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: hsl(0,100%,50%);
+}
+p.ex8{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: hsl(240,100%,50%);
+}
+p.ex9{
+    border: 2px solid black;
+    outline-style: solid;
+    outline-color: hsl(0,0%,73%);
+}

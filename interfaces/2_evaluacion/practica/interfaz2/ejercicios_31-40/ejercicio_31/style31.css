@@ -1,0 +1,6 @@
+.conico {
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(red, green, blue); /* RGB */
+    border: 1px solid black;
+}
